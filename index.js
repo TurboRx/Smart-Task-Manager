@@ -28,9 +28,10 @@ function displayTasks() {
 displayTasks();
 
 function completeTask(taskNumber) {
-  // .splice needs two things:     (where to start, how many to delete)
+  // .splice needs two things: (where to start, how many to delete)
   let removed = tasks.splice(taskNumber, 1);
   console.log("Great Job! You have finished: " + removed[0]);
   displayTasks();
 }
 completeTask(1);
+
