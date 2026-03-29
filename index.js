@@ -1,37 +1,33 @@
-let myFirstTask = "Set up VS Code";
-console.log(myFirstTask);
-
-let tasks = ["Set up VS Code", "Learn JavaScript", "Build a Project"];
-console.log(tasks[0]);
-
-tasks.push("Master Arrays");
-console.log(tasks);
-
-tasks.pop();
-console.log(tasks);
+let tasks = [
+  { name: "Set up VS Code", isComplete: false },
+  { name: "Learn JavaScript", isComplete: false },
+  { name: "Build a Project", isComplete: false }
+];
 
 function addTask(newTaskName) {
- tasks.push(newTaskName);
+  let newTask = {
+    name: newTaskName, 
+    isComplete: false
+  };
+  tasks.push(newTask);
   console.log("Success! Added: " + newTaskName);
 }
-
-addTask("Learn about functions");
 
 function displayTasks() {
   console.log("--- MY TASK LIST ---");
   for (let i = 0; i < tasks.length; i++) {
-    console.log(i + " - " + tasks[i]);
+    let status = tasks[i].isComplete ? "[✔]" : "[ ]";
+    console.log(i + " - " + status + " " + tasks[i].name);
   }
   console.log("--------------------");
 }
 
-displayTasks();
-
 function completeTask(taskNumber) {
-  // .splice needs two things: (where to start, how many to delete)
-  let removed = tasks.splice(taskNumber, 1);
-  console.log("Great Job! You have finished: " + removed[0]);
+  tasks[taskNumber].isComplete = true; 
+  console.log("Great Job! You have finished: " + tasks[taskNumber].name);
   displayTasks();
 }
-completeTask(1);
 
+addTask("Learn about functions");
+displayTasks();
+completeTask(1);
