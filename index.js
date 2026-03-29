@@ -1,3 +1,7 @@
+let taskinput = document.getElementById("task-input");
+let addBtn = document.getElementById("add-task");
+let taskList = document.getElementById("task-list");
+
 let tasks = [
   { name: "Set up VS Code", isComplete: false },
   { name: "Learn JavaScript", isComplete: false },
