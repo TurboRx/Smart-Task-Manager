@@ -35,3 +35,14 @@ function completeTask(taskNumber) {
 addTask("Learn about functions");
 displayTasks();
 completeTask(1);
+
+addBtn.addEventListener('click', function() {
+  let newTaskName = taskinput.value;
+  if (newTaskName) !== "") {
+    addTask(newTaskName);
+    taskInput.value = "";
+    displaytasks();
+  } else {
+    alert("Please enter a task!");
+  }
+}
