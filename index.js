@@ -10,7 +10,7 @@ let tasks = [
 
 function addTask(newTaskName) {
   let newTask = {
-    name: newTaskName, 
+    name: newTaskName,
     isComplete: false
   };
   tasks.push(newTask);
@@ -27,7 +27,7 @@ function displayTasks() {
 }
 
 function completeTask(taskNumber) {
-  tasks[taskNumber].isComplete = true; 
+  tasks[taskNumber].isComplete = true;
   console.log("Great Job! You have finished: " + tasks[taskNumber].name);
   displayTasks();
 }
@@ -39,10 +39,10 @@ completeTask(1);
 addBtn.addEventListener('click', function() {
   let newTaskName = taskinput.value;
   if (newTaskName) !== "") {
-    addTask(newTaskName);
-    taskInput.value = "";
-    displaytasks();
-  } else {
-    alert("Please enter a task!");
-  }
+  addTask(newTaskName);
+  taskInput.value = "";
+  displaytasks();
+} else {
+  alert("Please enter a task!");
+}
 }
